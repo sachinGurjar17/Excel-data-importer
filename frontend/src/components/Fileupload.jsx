@@ -61,7 +61,7 @@ export default function FileUpload() {
     }
 
     try {
-      const response = await fetch("http://localhost:3000/api/import", {
+      const response = await fetch("https://excel-data-importer-vjhs.onrender.com/api/import", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ data: tableData }),
