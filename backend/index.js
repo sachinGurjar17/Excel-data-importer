@@ -1,12 +1,15 @@
 import express from "express";
 import mongoose from "mongoose";
 import cors from "cors";
+import dotenv from "dotenv"
 
 const app = express();
 app.use(express.json());
 app.use(cors());
 
-mongoose.connect("mongodb+srv://sachinGurjar:Sachin%40123@cluster0.8fkp40v.mongodb.net/");
+dotenv.config();
+
+mongoose.connect(process.env.MONGO_URI);
 
 const DataSchema = new mongoose.Schema({
   name: String,
